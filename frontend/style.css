@@ -1,0 +1,194 @@
+/* style.css */
+
+/* --- TFF 1. FONT LOADING: MONTSERRAT --- */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/montserat/Montserrat-Medium.otf') format('opentype');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/montserat/Montserrat-Black.otf') format('opentype');
+    font-weight: 900; /* Black (Extra Bold) */
+    font-style: normal;
+}
+
+/* --- TFF 2. FONT LOADING: AVENIR --- */
+@font-face {
+    font-family: 'Avenir';
+    src: url('./fonts/avenir/Avenir-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('./fonts/avenir/Avenir-Book.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Base Reset and Fonts */
+body {
+    /* Set default font */
+    font-family: 'Montserrat', Arial, sans-serif; 
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+.score-text {
+    font-family: 'Avenir'; 
+    /* 400 ağırlığını çağırıyoruz (Yani Avenir Book) */
+    font-weight: 400; 
+    font-size: 14px; 
+    color: #333;
+    margin-left: 5px;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.product-list-container {
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto; 
+}
+
+/* Carousel Structure */
+.carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.products-wrapper {
+    display: flex; 
+    overflow-x: scroll; 
+    scroll-behavior: smooth; 
+    padding: 20px 0;
+    -webkit-overflow-scrolling: touch; /* Better scrolling for mobile */
+    
+    /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+.products-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+
+/* Product Card Style */
+.product-card {
+    background-color: white;
+    border: 1px solid #eee;
+    margin-right: 20px;
+    padding: 15px;
+    width: 280px; /* Fixed card width */
+    flex-shrink: 0; /* Prevent cards from shrinking */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+    object-fit: contain;
+}
+
+.product-info h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px; /* Requested size */
+    font-weight: 500; /* Montserrat Medium */
+    margin: 0 0 5px 0;
+    line-height: 1.2;
+}
+
+/* Example style for Price (Bolder) */
+.product-info p {
+    font-family: 'Avenir', sans-serif; /* Example using Avenir font */
+    font-size: 1.2em;
+    margin: 0 0 10px 0;
+    font-weight: 900; /* Avenir-Black */
+    color: #333;
+}
+
+/* Color Picker Style */
+.color-picker {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.color-option {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+/* Custom classes for colors */
+.yellow-gold { background-color: #E6CA97; }
+.white-gold { background-color: #D9D9D9; }
+.rose-gold { background-color: #E1A4A9; }
+
+.color-option.active {
+    border: 3px solid #333;
+    transform: scale(1.1);
+}
+
+/* Popularity/Star Rating Style */
+.popularity-score {
+    color: gold;
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+.score-text {
+    color: #333;
+    font-size: 0.9em;
+    margin-left: 5px;
+}
+
+/* Carousel Arrows */
+.carousel-arrow {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.left-arrow { left: 0; }
+.right-arrow { right: 0; }
+
+/* Mobile Adaption (Hide arrows on small screens) */
+@media (max-width: 768px) {
+    .carousel-arrow {
+        display: none; /* Scrolling will be used instead of arrows on mobile */
+    }
+}
