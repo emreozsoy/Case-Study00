@@ -1,7 +1,7 @@
 const productsWrapper = document.getElementById('products-wrapper');
 const loadingMessage = document.getElementById('loading-message');
-const API_URL = 'http://localhost:5000/api/products'; 
-
+//OLD URL // const API_URL = 'http://localhost:5000/api/products'; 
+const API_URL =  'https://case-study00.onrender.com/api/products';
 /**
  * Converts popularity score into star icons and a text label.
  * @param {number} score - Popularity score out of 5 (e.g., 4.5)
